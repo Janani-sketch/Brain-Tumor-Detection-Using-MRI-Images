@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brain Tumor Detection From MRI Images</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f8;
+            text-align: center;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Brain Tumor Detection From MRI Images</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required><br><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <h3>Prediction:</h3>
+            <p><b>{{ prediction }}</b></p>
+        {% endif %}
+    </div>
+</body>
+</html>
